@@ -21,8 +21,9 @@ export class DigitalClock {
   }
 
   private onUpdate (event: TickEvent) {
+    const hours = this.use12HourFormat ? event.date.getHours() % 12 : event.date.getHours()
     this.timeCb({
-      hours: this.padHours ? padTime(event.date.getHours()) : event.date.getHours().toString(),
+      hours: this.padHours ? padTime(hours) : hours.toString(),
       minutes: this.padMinutes ? padTime(event.date.getMinutes()) : event.date.getMinutes().toString()
     })
 
