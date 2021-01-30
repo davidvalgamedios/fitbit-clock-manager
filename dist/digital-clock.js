@@ -6,13 +6,14 @@ var DigitalClock = /** @class */ (function () {
         this.dateCb = dateCb;
         this.padHours = (cfg === null || cfg === void 0 ? void 0 : cfg.padHours) !== undefined ? cfg.padHours : true;
         this.padMinutes = (cfg === null || cfg === void 0 ? void 0 : cfg.padMinutes) !== undefined ? cfg.padMinutes : true;
-        this.use12HourFormat = preferences.clockDisplay === '12h';
+        this.use12HourFormat = ((cfg === null || cfg === void 0 ? void 0 : cfg.hourFormat) || preferences.clockDisplay) === '12h';
         clock.granularity = (cfg === null || cfg === void 0 ? void 0 : cfg.granularity) || 'minutes';
         clock.ontick = this.onUpdate.bind(this);
     }
     DigitalClock.prototype.onUpdate = function (event) {
+        var hours = this.use12HourFormat ? event.date.getHours() % 12 : event.date.getHours();
         this.timeCb({
-            hours: this.padHours ? padTime(event.date.getHours()) : event.date.getHours().toString(),
+            hours: this.padHours ? padTime(hours) : hours.toString(),
             minutes: this.padMinutes ? padTime(event.date.getMinutes()) : event.date.getMinutes().toString()
         });
         if (this.dateCb && (!this.lastDate ||
