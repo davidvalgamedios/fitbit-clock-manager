@@ -1,0 +1,40 @@
+{
+  "name": "fitbit-clock-manager",
+  "version": "0.0.1",
+  "description": "Clock classes",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "eslint src/**/*.ts && jest && rm -r ./dist && tsc",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --collectCoverage=true && open coverage/lcov-report/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@fitbit/sdk": "5.0.1",
+    "@fitbit/sdk-cli": "1.7.3",
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "fitbit-sdk-types": "6.0.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidvalgamedios/fitbit-clock-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidvalgamedios/fitbit-clock-manager/issues"
+  },
+  "homepage": "https://github.com/davidvalgamedios/fitbit-clock-manager#readme"
+}
