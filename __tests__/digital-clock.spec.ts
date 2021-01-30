@@ -134,4 +134,69 @@ describe('Digital clock', () => {
     expect(timeCb).toHaveBeenCalledTimes(1)
     expect(timeCb).toHaveBeenCalledWith(timeResponse)
   })
+
+  test('Test without no date updates', () => {
+    const timeCb = jest.fn()
+    const dateCb = jest.fn()
+    new DigitalClock(timeCb, dateCb)
+    const timeResponseA: TimeData = {
+      hours: '15',
+      minutes: '30'
+    }
+    const timeResponseB: TimeData = {
+      hours: '15',
+      minutes: '30'
+    }
+    const dateResponse: DateData = {
+      month: 5,
+      year: 2020,
+      day: 30,
+      weekDay: 2
+    }
+
+    clock.ontick(getTickEvent(15, 30))
+    clock.ontick(getTickEvent(15, 31))
+
+    expect(timeCb).toHaveBeenCalledTimes(2)
+    expect(timeCb).toHaveBeenCalledWith(timeResponseA)
+    expect(timeCb).toHaveBeenCalledWith(timeResponseB)
+    expect(dateCb).toHaveBeenCalledTimes(1)
+    expect(dateCb).toHaveBeenCalledWith(dateResponse)
+  })
+
+  test('Test with date updates', () => {
+    const timeCb = jest.fn()
+    const dateCb = jest.fn()
+    new DigitalClock(timeCb, dateCb)
+    const timeResponseA: TimeData = {
+      hours: '15',
+      minutes: '30'
+    }
+    const timeResponseB: TimeData = {
+      hours: '16',
+      minutes: '20'
+    }
+    const dateResponseA: DateData = {
+      month: 4,
+      year: 2020,
+      day: 30,
+      weekDay: 6
+    }
+    const dateResponseB: DateData = {
+      month: 4,
+      year: 2020,
+      day: 31,
+      weekDay: 0
+    }
+
+    clock.ontick(getTickEvent(15, 30, 30, 4))
+    clock.ontick(getTickEvent(16, 20, 31, 4))
+
+    expect(timeCb).toHaveBeenCalledTimes(2)
+    expect(timeCb).toHaveBeenCalledWith(timeResponseA)
+    expect(timeCb).toHaveBeenCalledWith(timeResponseB)
+    expect(dateCb).toHaveBeenCalledTimes(2)
+    expect(dateCb).toHaveBeenCalledWith(dateResponseA)
+    expect(dateCb).toHaveBeenCalledWith(dateResponseB)
+  })
 })
