@@ -1,5 +1,5 @@
 {
-  "name": "fitbit-clock-manager",
+  "name": "fitbit-easy-clock",
   "version": "0.1.0",
   "description": "Clock classes",
   "main": "dist/index.js",
@@ -29,12 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidvalgamedios/fitbit-clock-manager.git"
+    "url": "git+https://github.com/davidvalgamedios/fitbit-easy-clock.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/davidvalgamedios/fitbit-clock-manager/issues"
+    "url": "https://github.com/davidvalgamedios/fitbit-easy-clock/issues"
   },
-  "homepage": "https://github.com/davidvalgamedios/fitbit-clock-manager#readme"
+  "homepage": "https://github.com/davidvalgamedios/fitbit-easy-clock#readme"
 }

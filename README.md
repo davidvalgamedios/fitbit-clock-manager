@@ -1,4 +1,4 @@
-# Fitbit Clock Manager
+# Fitbit Easy Clock
 This package will help you build clockfaces much easier and focus on your designs
 
 ### Features
@@ -7,12 +7,12 @@ This package will help you build clockfaces much easier and focus on your design
 - Configurable padding with 0 for hours and minutes
 
 ### Installation
-Install with `npm i fitbit-clock-manager` or `yarn add fitbit-clock-manager`
+Install with `npm i fitbit-easy-clock` or `yarn add fitbit-easy-clock`
 
 ### Usage
 
 ```typescript
-import {DigitalClock, TimeData, DateData} from "fitbit-clock-manager"
+import {DigitalClock, TimeData, DateData} from "fitbit-easy-clock"
 import document from "document"
 
 const timeLabel = document.getElementById('timeLabel')
