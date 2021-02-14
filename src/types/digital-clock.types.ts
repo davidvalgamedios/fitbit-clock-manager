@@ -1,11 +1,11 @@
 export type Granularity = 'off' | 'seconds' | 'minutes' | 'hours'
 
-export type TimeData = {
+export interface TimeData {
   hours: string,
   minutes: string
 }
 
-export type DateData = {
+export interface DateData {
   day: number,
   month: number,
   year: number,
