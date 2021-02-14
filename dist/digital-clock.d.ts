@@ -4,7 +4,7 @@ export declare class DigitalClock {
     private readonly padMinutes;
     private readonly timeCb;
     private readonly dateCb;
-    private use12HourFormat;
+    private readonly use12HourFormat;
     private lastDate;
     constructor(timeCb: OnTimeUpdate, dateCb?: OnDateUpdate, cfg?: DigitalClockConfig);
     private onUpdate;
