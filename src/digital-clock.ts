@@ -7,7 +7,7 @@ export class DigitalClock {
   private readonly padMinutes: boolean
   private readonly timeCb: OnTimeUpdate
   private readonly dateCb: OnDateUpdate
-  private use12HourFormat: boolean
+  private readonly use12HourFormat: boolean
   private lastDate: Date
 
   constructor (timeCb: OnTimeUpdate, dateCb?: OnDateUpdate, cfg?: DigitalClockConfig) {
